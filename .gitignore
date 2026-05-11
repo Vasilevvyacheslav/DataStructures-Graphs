@@ -1,0 +1,20 @@
+# Qt Creator
+*.pro.user
+*.qmlproject
+*.json
+
+# Build directories
+build*/
+cmake-build-*/
+Debug/
+Release/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# OS
+.DS_Store
+Thumbs.db
