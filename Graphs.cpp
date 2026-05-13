@@ -113,18 +113,16 @@ vector<int> Graph::GetNbrs(int vertex)
 }
 
 //Метод служит для добавления вершины
-void Graph::InsertVertex(int vertex) {
-    if (!this->IsFull()) {
-        this->vertList.push_back(vertex);
+bool Graph::InsertVertex(int vertex) {
+    if (IsFull()) {
+        return false;
     }
-    else {
-        cout << "Граф уже заполнен. Невозможно добавить новую вершину " << endl;
-        return;
-    }
+    vertList.push_back(vertex);
+    return true;
 }
 
 //Метод вставляет между вершинами vertex1 и vertex2 ребро весом weight (для взвешенного графа)
-void Graph::InsertEdge(int vertex1, int vertex2, int weight) {
+bool Graph::InsertEdge(int vertex1, int vertex2, int weight) {
 
     int vertPos1 = GetVertPos(vertex1);
     int vertPos2 = GetVertPos(vertex2);
@@ -132,8 +130,7 @@ void Graph::InsertEdge(int vertex1, int vertex2, int weight) {
     if (vertPos1 != -1 && vertPos2 != -1) {
         if (this->adjMatrix[vertPos1][vertPos2] != 0
             && this->adjMatrix[vertPos2][vertPos1] != 0) {
-            cout << "Ребро между вершинами уже есть" << endl;
-            return;
+            return false;
         }
         else {
             this->adjMatrix[vertPos1][vertPos2] = weight;
@@ -141,30 +138,33 @@ void Graph::InsertEdge(int vertex1, int vertex2, int weight) {
         }
     }
     else {
-        cout << "Обеих вершин (или одной из них) нет в графе " << endl;
-        return;
+        return false;
     }
 }
 
-//Этот метод используется для печати матрицы смежности графа
-void Graph::Print() {
-    if (!this->IsEmpty()) {
-        cout << "Матрица смежности графа:\n";
-        cout << "   ";
-        for(int i = 1, vertListSize = this->vertList.size(); i <= vertListSize; ++i)
-        {
-            cout << i << "     ";
-        }
-        cout << endl;
-        for (int i = 0, vertListSize = this->vertList.size(); i < vertListSize; ++i) {
-            cout << this->vertList[i] << ' ';
-            for (int j = 0; j < vertListSize; ++j) {
-                cout << ' ' << this->adjMatrix[i][j] << '\t';
-            }
-            cout << endl;
-        }
+// Метод, который возвращает строку в виде матрицы смежности
+string Graph::PrintToString() const {
+
+    ostringstream oss;
+
+    if (this->IsEmpty()) {
+        return "Граф пуст";
     }
-    else {
-        cout << "Граф пуст " << endl;
+
+    // Заголовки
+    for(int i = 0; i < this->vertList.size(); ++i) {
+        oss << "    " << this->vertList[i];
     }
+    oss << "\n";
+
+    // Строки матрицы
+    for (int i = 0; i < this->vertList.size(); ++i) {
+        oss << this->vertList[i] << "  ";
+        for (int j = 0; j < this->vertList.size(); ++j) {
+            oss << " " << this->adjMatrix[i][j] << "\t";
+        }
+        oss << "\n";
+    }
+
+    return oss.str();
 }
