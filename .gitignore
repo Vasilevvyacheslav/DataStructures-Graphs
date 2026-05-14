@@ -1,7 +1,7 @@
 # Qt Creator
+.qtcreator/
 *.pro.user
 *.qmlproject
-*.json
 *.user
 
 # Build directories
@@ -9,7 +9,7 @@ build*/
 cmake-build-*/
 Debug/
 Release/
-.qtcreator/
+out/
 
 # CMake
 CMakeCache.txt
@@ -20,4 +20,4 @@ cmake_install.cmake
 # OS
 .DS_Store
 Thumbs.db
-
+desktop.ini
