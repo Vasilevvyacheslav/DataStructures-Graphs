@@ -2,12 +2,14 @@
 *.pro.user
 *.qmlproject
 *.json
+*.user
 
 # Build directories
 build*/
 cmake-build-*/
 Debug/
 Release/
+.qtcreator/
 
 # CMake
 CMakeCache.txt
@@ -18,3 +20,4 @@ cmake_install.cmake
 # OS
 .DS_Store
 Thumbs.db
+
