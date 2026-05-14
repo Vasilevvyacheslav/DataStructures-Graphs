@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>801</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Graph Algorithms</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>841</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>481</width>
+      <height>611</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>-10</y>
+      <width>351</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>600</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="tab_1">
+        <attribute name="title">
+         <string>Редактор графа</string>
+        </attribute>
+        <widget class="QTableWidget" name="tableMatrix">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>330</y>
+           <width>311</width>
+           <height>221</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnAddVertex">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>141</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Добавить вершину</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBoxVertex">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>78</y>
+           <width>61</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>130</y>
+           <width>291</width>
+           <height>141</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Ребро</string>
+         </property>
+         <widget class="QPushButton" name="btnAddEdge">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>131</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Добавить ребро</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxFrom">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>100</y>
+            <width>61</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxTo">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>100</y>
+            <width>61</width>
+            <height>29</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxWeight">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>100</y>
+            <width>61</width>
+            <height>29</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>80</y>
+            <width>21</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>От</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>80</y>
+            <width>21</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>До</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>80</y>
+            <width>31</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Вес</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnRemoveEdge">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>40</y>
+            <width>131</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Удалить ребро</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>80</y>
+           <width>81</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Вершина:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnRemoveVertex">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>20</y>
+           <width>141</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Удалить вершину</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnClearGraph">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>290</y>
+           <width>141</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Очистить граф</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_2">
+        <attribute name="title">
+         <string>Алгоритмы</string>
+        </attribute>
+        <widget class="QSpinBox" name="spinBoxStart">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>20</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnBFS">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>70</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>BFS (Поиск в ширину)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnDFS">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>120</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>DFS (Поиск в глубину)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnDijkstra">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>170</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Дейкстра</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnFloyd">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>220</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Флойд-Уоршелл</string>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="textEditOutput">
+         <property name="geometry">
+          <rect>
+           <x>33</x>
+           <y>330</y>
+           <width>261</width>
+           <height>211</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>191</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Начальная вершина:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnStepBFS">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>70</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Шаг</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnStepDFS">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>120</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Шаг</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnStepDijkstra">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>170</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Шаг</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnStepFloyd">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>220</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Шаг</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnReset">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>280</y>
+           <width>90</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Сбросить</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
