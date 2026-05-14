@@ -1,0 +1,154 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="Страница-1" id="RoAgse5YWkTnwF5uqh2E">
+    <mxGraphModel dx="2891" dy="2200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Graph" vertex="1">
+          <mxGeometry height="360" width="250" x="240" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-2" parent="zFy8hKdjMZc-KCKwU88r-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- maxSize: static const int = 20&lt;/div&gt;&lt;div&gt;- adjMatrix: int[maxSize][maxSize]&lt;/div&gt;&lt;div&gt;- vertList: vector&amp;lt;int&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-3" parent="zFy8hKdjMZc-KCKwU88r-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="250" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-4" parent="zFy8hKdjMZc-KCKwU88r-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Graph()&lt;/div&gt;&lt;div&gt;+ Graph(int size)&lt;/div&gt;&lt;div&gt;+ ~Graph()&lt;/div&gt;&lt;div&gt;+ GetVertPos(int vertex): int&lt;/div&gt;&lt;div&gt;+ GetAmountVerts(): int&lt;/div&gt;&lt;div&gt;+ GetAmountEdges(): int&lt;/div&gt;&lt;div&gt;+ GetWeight(int v1, int v2): int&lt;/div&gt;&lt;div&gt;+ GetVertex(int index): int&lt;/div&gt;&lt;div&gt;+ GetNbrs(int vertex): vector&amp;lt;int&amp;gt;&lt;/div&gt;&lt;div&gt;+ InsertVertex(int vertex): bool&lt;/div&gt;&lt;div&gt;+ InsertEdge(int v1, int v2, int weight): bool&lt;/div&gt;&lt;div&gt;+ IsEmpty(): bool&lt;/div&gt;&lt;div&gt;+ IsFull(): bool&lt;/div&gt;&lt;div&gt;+ RemoveVertex(int vertex): bool&lt;/div&gt;&lt;div&gt;+ RemoveEdge(int u, int v): bool&lt;/div&gt;&lt;div&gt;+ PrintToString(): string&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="252" width="250" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="AlgorithmVisualizer" vertex="1">
+          <mxGeometry height="510" width="300" x="680" y="-260" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-6" parent="zFy8hKdjMZc-KCKwU88r-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- m_scene: QGraphicsScene*&lt;/div&gt;&lt;div&gt;- m_graph: const Graph*&lt;/div&gt;&lt;div&gt;- m_colorUnvisited: QColor&lt;/div&gt;&lt;div&gt;- m_colorVisited: QColor&lt;/div&gt;&lt;div&gt;- m_colorActive: QColor&lt;/div&gt;&lt;div&gt;- m_colorDijkstraActive: QColor&lt;/div&gt;&lt;div&gt;- m_colorDijkstraVisited: QColor&lt;/div&gt;&lt;div&gt;- m_colorDijkstraUnvisited: QColor&lt;/div&gt;&lt;div&gt;- CENTER_X: static constexpr int = 200&lt;/div&gt;&lt;div&gt;- CENTER_Y: static constexpr int = 200&lt;/div&gt;&lt;div&gt;- RADIUS: static constexpr int = 150&lt;/div&gt;&lt;div&gt;- PI: static constexpr double = 3.1415926535&lt;/div&gt;&lt;div&gt;- VERTEX_RADIUS: static constexpr int = 20&lt;/div&gt;&lt;div&gt;- EDGE_WEIGHT_OFFSET: static constexpr int = 12&lt;/div&gt;&lt;div&gt;- m_fontVertex: QFont&lt;/div&gt;&lt;div&gt;- m_fontWeight: QFont&lt;/div&gt;" vertex="1">
+          <mxGeometry height="244" width="300" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-7" parent="zFy8hKdjMZc-KCKwU88r-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="300" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-8" parent="zFy8hKdjMZc-KCKwU88r-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;+ AlgorithmVisualizer(QGraphicsScene*, const Graph*)&lt;/div&gt;&lt;div&gt;+ drawGraph(): void&lt;/div&gt;&lt;div&gt;+ drawEdges(): void&lt;/div&gt;&lt;div&gt;+ drawVertex(int, QPointF, bool, bool, bool): void&lt;/div&gt;&lt;div&gt;+ drawBFSStep(const BFSStep&amp;amp;): void&lt;/div&gt;&lt;div&gt;+ drawDFSStep(const DFSStep&amp;amp;): void&lt;/div&gt;&lt;div&gt;+ drawDijkstraStep(const DijkstraStep&amp;amp;): void&lt;/div&gt;&lt;div&gt;+ drawFloydStep(const FloydStep&amp;amp;): void&lt;/div&gt;&lt;div&gt;+ drawDistanceMatrix(const vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; dist, int, int, int): void&lt;/div&gt;&lt;div&gt;+ getVertexPosition(int, int): QPointF&lt;/div&gt;&lt;div&gt;+ setGraph(const Graph*): void&lt;/div&gt;&lt;div&gt;+ setColors(QColor, QColor, QColor): void&lt;/div&gt;&lt;div&gt;+ resetView(): void&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="232" width="300" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="MainWindow" vertex="1">
+          <mxGeometry height="510" width="250" x="-150" y="-121" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-10" parent="zFy8hKdjMZc-KCKwU88r-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- ui: Ui::MainWindow*&lt;/div&gt;&lt;div&gt;- graph: Graph*&lt;/div&gt;&lt;div&gt;- visualizer: AlgorithmVisualizer*&lt;/div&gt;&lt;div&gt;- bfsSteps: vector&amp;lt;BFSStep&amp;gt;&lt;/div&gt;&lt;div&gt;- dfsSteps: vector&amp;lt;DFSStep&amp;gt;&lt;/div&gt;&lt;div&gt;- dijkstraSteps: vector&amp;lt;DijkstraStep&amp;gt;&lt;/div&gt;&lt;div&gt;- floydSteps: vector&amp;lt;FloydStep&amp;gt;&lt;/div&gt;&lt;div&gt;- currentBFSIndex: int&lt;/div&gt;&lt;div&gt;- currentDFSIndex: int&lt;/div&gt;&lt;div&gt;- currentDijkstraIndex: int&lt;/div&gt;&lt;div&gt;- currentFloydIndex: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="174" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-11" parent="zFy8hKdjMZc-KCKwU88r-9" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="250" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-12" parent="zFy8hKdjMZc-KCKwU88r-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;+ MainWindow(QWidget*)&lt;/div&gt;&lt;div&gt;+ ~MainWindow()&lt;/div&gt;&lt;div&gt;+ onAddVertex(): void&lt;/div&gt;&lt;div&gt;+ onAddEdge(): void&lt;/div&gt;&lt;div&gt;+ onRunBFS(): void&lt;/div&gt;&lt;div&gt;+ onRunDFS(): void&lt;/div&gt;&lt;div&gt;+ onRunDijkstra(): void&lt;/div&gt;&lt;div&gt;+ onRunFloyd(): void&lt;/div&gt;&lt;div&gt;+ onStepBFS(): void&lt;/div&gt;&lt;div&gt;+ onStepDFS(): void&lt;/div&gt;&lt;div&gt;+ onStepDijkstra(): void&lt;/div&gt;&lt;div&gt;+ onStepFloyd(): void&lt;/div&gt;&lt;div&gt;+ onClearGraph(): void&lt;/div&gt;&lt;div&gt;+ onReset(): void&lt;/div&gt;&lt;div&gt;+ onMatrixCellChanged(int, int): void&lt;/div&gt;&lt;div&gt;+ onRemoveVertex(): void&lt;/div&gt;&lt;div&gt;+ onRemoveEdge(): void&lt;/div&gt;&lt;div&gt;- updateMatrix(): void&lt;/div&gt;&lt;div&gt;- showResult(QString, vector&amp;lt;int&amp;gt;&amp;amp;): void&lt;/div&gt;&lt;div&gt;- showFloydMatrix(FloydStep&amp;amp;): void&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="302" width="250" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-13" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="BFSStep" vertex="1">
+          <mxGeometry height="100" width="250" x="1460" y="389" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-14" parent="zFy8hKdjMZc-KCKwU88r-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ currentVertex: int&lt;/div&gt;&lt;div&gt;+ visitedVertices: vector&amp;lt;int&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ logText: string&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-18" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DFSStep" vertex="1">
+          <mxGeometry height="100" width="250" x="860" y="389" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-17" parent="zFy8hKdjMZc-KCKwU88r-18" style="text;whiteSpace=wrap;" value="+ currentVertex: int&#xa;+ visitedVertices: vector&lt;int&gt;&#xa;+ currentPath: vector&lt;int&gt;&#xa;+ logText: string" vertex="1">
+          <mxGeometry height="74" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-22" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DijkstraStep" vertex="1">
+          <mxGeometry height="100" width="250" x="1150" y="389" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-23" parent="zFy8hKdjMZc-KCKwU88r-22" style="text;whiteSpace=wrap;" value="+ currentVertex: int&#xa;+ distances: vector&lt;int&gt;&#xa;+ visited: vector&lt;bool&gt;&#xa;+ logText: string" vertex="1">
+          <mxGeometry height="74" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-24" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="FloydStep" vertex="1">
+          <mxGeometry height="130" width="250" x="570" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-25" parent="zFy8hKdjMZc-KCKwU88r-24" style="text;whiteSpace=wrap;" value="+ k: int&#xa;+ i: int&#xa;+ j: int&#xa;+ dist: vector&lt;vector&lt;int&gt;&gt;&#xa;+ logText: string&#xa;+ wasUpdated: bool" vertex="1">
+          <mxGeometry height="104" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-27" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="GraphAlgorithms" vertex="1">
+          <mxGeometry height="100" width="480" x="140" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-28" parent="zFy8hKdjMZc-KCKwU88r-27" style="text;whiteSpace=wrap;" value=" + GenerateBFSSteps(const Graph&amp; g, int startVertex): vector&lt;BFSStep&gt;&#xa; + GenerateDFSSteps(const Graph&amp; g, int startVertex): vector&lt;DFSStep&gt;&#xa; + GenerateDijkstraSteps(const Graph&amp; g, int startVertex): vector&lt;DijkstraStep&gt;&#xa; + GenerateFloydSteps(const Graph&amp; g): vector&lt;FloydStep&gt;" vertex="1">
+          <mxGeometry height="74" width="480" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-29" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-27" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="zFy8hKdjMZc-KCKwU88r-4" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="50" y="530" as="sourcePoint" />
+            <mxPoint x="210" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-31" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-17" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-27" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="350" y="1180" as="sourcePoint" />
+            <mxPoint x="647" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-32" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-23" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-28" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="460" y="890" as="sourcePoint" />
+            <mxPoint x="524" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-33" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-25" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" target="zFy8hKdjMZc-KCKwU88r-27" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="852" y="920" as="sourcePoint" />
+            <mxPoint x="690" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-34" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-12" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-27" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="790" y="620" as="sourcePoint" />
+            <mxPoint x="950" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-35" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-4" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-12" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="660" y="570" as="sourcePoint" />
+            <mxPoint x="820" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-36" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-8" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;" target="zFy8hKdjMZc-KCKwU88r-9" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="740" y="340" as="sourcePoint" />
+            <mxPoint x="900" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-38" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-2" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="zFy8hKdjMZc-KCKwU88r-8" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="620" y="480" as="sourcePoint" />
+            <mxPoint x="780" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-43" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-14" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-28" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1843" y="590" as="sourcePoint" />
+            <mxPoint x="1250" y="796" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-44" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-8" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-24" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1285" y="210" as="sourcePoint" />
+            <mxPoint x="1100" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-45" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-8" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-18" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1083" y="310" as="sourcePoint" />
+            <mxPoint x="1010" y="445" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-46" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-8" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-22" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1143" y="320" as="sourcePoint" />
+            <mxPoint x="1070" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zFy8hKdjMZc-KCKwU88r-47" edge="1" parent="1" source="zFy8hKdjMZc-KCKwU88r-8" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zFy8hKdjMZc-KCKwU88r-13" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1293" y="210" as="sourcePoint" />
+            <mxPoint x="1220" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
