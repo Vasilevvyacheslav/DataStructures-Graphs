@@ -22,13 +22,17 @@ public:
     int GetVertPos(int vertex) const;
     int GetAmountVerts() const;
     int GetAmountEdges() const;
-    int GetWeight(int vertex1, int vertex2) const;
-    vector<T> GetNbrs(int vertex) const;
+    int GetWeight(int v1, int v2) const;
+    int GetVertex(int index) const;
+    vector<int> GetNbrs(int vertex) const;
 
     bool InsertVertex(int vertex);
-    bool InsertEdge(int vertex1, int vertex2, int weight);
+    bool InsertEdge(int v1, int v2, int weight);
     bool IsEmpty() const;
     bool IsFull() const;
+    bool RemoveVertex(int vertex);
+    bool RemoveEdge(int u, int v);
     string PrintToString() const;
 };
 
+#endif // GRAPHS_H

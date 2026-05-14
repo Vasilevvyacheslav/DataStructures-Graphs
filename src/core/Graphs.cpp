@@ -26,7 +26,7 @@ Graph::Graph(int size)
 Graph::~Graph(){}
 
 //Метод, находит позицию вершины в векторе вершин
-int Graph::GetVertPos(int vertex)
+int Graph::GetVertPos(int vertex) const
 {
     for(size_t i = 0; i < vertList.size(); ++i)
     {
@@ -38,7 +38,7 @@ int Graph::GetVertPos(int vertex)
 
 
 //Метода, проверяет, пуст ли граф, то есть в нём нет ни одной вершины
-bool Graph::IsEmpty()
+bool Graph::IsEmpty() const
 {
     if(this->vertList.size())
         return false;
@@ -48,21 +48,21 @@ bool Graph::IsEmpty()
 
 
 //Метод проверяет, достигло ли количество вершин в графе максимально возможного предела
-bool Graph::IsFull()
+bool Graph::IsFull() const
 {
     return(vertList.size()==maxSize);
 }
 
 
 //Метод возвращает количество вершин в графе, то есть размер вектора вершин
-int Graph::GetAmountVerts()
+int Graph::GetAmountVerts() const
 {
     return this->vertList.size();
 }
 
 
 //Метод возвращает количество ребер в графе
-int Graph::GetAmountEdges()
+int Graph::GetAmountEdges() const
 {
     int amount = 0;
     if(!this->IsEmpty())
@@ -83,7 +83,7 @@ int Graph::GetAmountEdges()
 }
 
 //Метод возвращает вес ребра
-int Graph::GetWeight(int vertex1, int vertex2)
+int Graph::GetWeight(int vertex1, int vertex2) const
 {
     if(!this->IsEmpty())
     {
@@ -94,8 +94,18 @@ int Graph::GetWeight(int vertex1, int vertex2)
     return 0;
 }
 
+//Метод для получения значения вершины по индексу
+int Graph::GetVertex(int index) const
+{
+    if (index >= 0 && index < vertList.size())
+    {
+        return vertList[index];
+    }
+    return -1;
+}
+
 //Метод возвращает список соседей
-vector<int> Graph::GetNbrs(int vertex)
+vector<int> Graph::GetNbrs(int vertex) const
 {
     vector<int> nbrsList;
     int vertPos = this->GetVertPos(vertex);
@@ -128,18 +138,11 @@ bool Graph::InsertEdge(int vertex1, int vertex2, int weight) {
     int vertPos2 = GetVertPos(vertex2);
 
     if (vertPos1 != -1 && vertPos2 != -1) {
-        if (this->adjMatrix[vertPos1][vertPos2] != 0
-            && this->adjMatrix[vertPos2][vertPos1] != 0) {
-            return false;
-        }
-        else {
             this->adjMatrix[vertPos1][vertPos2] = weight;
             this->adjMatrix[vertPos2][vertPos1] = weight;
+            return true;
         }
-    }
-    else {
-        return false;
-    }
+    return false;
 }
 
 // Метод, который возвращает строку в виде матрицы смежности
@@ -167,4 +170,43 @@ string Graph::PrintToString() const {
     }
 
     return oss.str();
+}
+
+//Удаление вершин
+bool Graph::RemoveVertex(int vertex) {
+    int pos = GetVertPos(vertex);
+    if (pos == -1) return false; // Вершины нет
+
+    // Удаляем из списка вершин
+    vertList.erase(vertList.begin() + pos);
+    int currentSize = vertList.size(); // Новый размер
+
+    // Сдвигаем строки матрицы вверх
+    for (int i = pos; i < currentSize; ++i) {
+        for (int j = 0; j <= currentSize; ++j) {
+            adjMatrix[i][j] = adjMatrix[i + 1][j];
+        }
+    }
+
+    // Сдвигаем столбцы матрицы влево
+    for (int j = pos; j < currentSize; ++j) {
+        for (int i = 0; i < currentSize; ++i) {
+            adjMatrix[i][j] = adjMatrix[i][j + 1];
+        }
+    }
+
+    return true;
+}
+
+//Удаление ребёр
+bool Graph::RemoveEdge(int u, int v) {
+    int posU = GetVertPos(u);
+    int posV = GetVertPos(v);
+
+    if (posU != -1 && posV != -1) {
+        adjMatrix[posU][posV] = 0;
+        adjMatrix[posV][posU] = 0;
+        return true;
+    }
+    return false;
 }
